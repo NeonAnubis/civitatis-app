@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
+  <g id="Klarna" transform="translate(-40 -52)">
+    <g id="frame" transform="translate(40 52)">
+      <g id="frame-2" data-name="frame" fill="#fff" stroke="#ccc" stroke-width="0.5">
+        <rect width="60" height="40" rx="4" stroke="none"/>
+        <rect x="0.25" y="0.25" width="59.5" height="39.5" rx="3.75" fill="none"/>
+      </g>
+    </g>
+    <g id="Klarna-2" data-name="Klarna" transform="translate(44 61.483)">
+      <g id="Layer_1" data-name="Layer 1">
+        <rect id="Rectángulo_2781" data-name="Rectángulo 2781" width="52" height="21.034" rx="10.517" fill="#ffb3c7"/>
+        <path id="Trazado_15774" data-name="Trazado 15774" d="M75.43,17.207a3.221,3.221,0,1,0,0,5.323v.39h1.828v-6.1H75.43Zm-1.662,4.232a1.573,1.573,0,1,1,1.656-1.57A1.615,1.615,0,0,1,73.768,21.439Z" transform="translate(-33.79 -7.991)"/>
+        <rect id="Rectángulo_2782" data-name="Rectángulo 2782" width="1.913" height="8.824" transform="translate(14.665 6.106)"/>
+        <path id="Trazado_15775" data-name="Trazado 15775" d="M60.737,16.653a2.22,2.22,0,0,0-1.882.852v-.687h-1.82v6.1h1.842V19.714a1.287,1.287,0,0,1,1.372-1.383c.8,0,1.265.48,1.265,1.37v3.22h1.826V19.04A2.417,2.417,0,0,0,60.737,16.653Z" transform="translate(-27.376 -7.992)"/>
+        <path id="Trazado_15776" data-name="Trazado 15776" d="M38.353,17.207a3.221,3.221,0,1,0,0,5.323v.39H40.18v-6.1H38.353Zm-1.662,4.232a1.573,1.573,0,1,1,1.656-1.57,1.615,1.615,0,0,1-1.656,1.57Z" transform="translate(-15.993 -7.991)"/>
+        <path id="Trazado_15777" data-name="Trazado 15777" d="M50.224,17.767v-.8H48.353v6.1h1.875v-2.85c0-.962,1.042-1.478,1.765-1.478h.022V16.973a2.279,2.279,0,0,0-1.791.795Z" transform="translate(-23.209 -8.147)"/>
+        <path id="Trazado_15778" data-name="Trazado 15778" d="M86.264,24.548a1.147,1.147,0,1,0,1.147,1.147,1.147,1.147,0,0,0-1.147-1.147Z" transform="translate(-40.856 -11.783)"/>
+        <path id="Trazado_15779" data-name="Trazado 15779" d="M21.221,11.738H19.239A5.069,5.069,0,0,1,17.19,15.83l-.785.588,3.043,4.149h2.5l-2.8-3.818a7.023,7.023,0,0,0,2.072-5.011Z" transform="translate(-7.874 -5.634)"/>
+        <rect id="Rectángulo_2783" data-name="Rectángulo 2783" width="1.986" height="8.828" transform="translate(6.303 6.104)"/>
+      </g>
+    </g>
+  </g>
+</svg>
