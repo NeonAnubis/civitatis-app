@@ -1,4 +1,32 @@
+import { useState, useRef } from 'react';
+
+const topDestinations = [
+  { city: "Roma",       country: "Italia" },
+  { city: "París",      country: "Francia" },
+  { city: "Nueva York", country: "Estados Unidos" },
+  { city: "Londres",    country: "Reino Unido" },
+  { city: "Cracovia",   country: "Polonia" },
+  { city: "Marrakech",  country: "Marruecos" },
+  { city: "Florencia",  country: "Italia" },
+  { city: "Madrid",     country: "España" },
+  { city: "Budapest",   country: "Hungría" },
+  { city: "Edimburgo",  country: "Reino Unido" },
+  { city: "Ámsterdam",  country: "Países Bajos" },
+  { city: "Granada",    country: "España" },
+  { city: "Barcelona",  country: "España" },
+  { city: "Milán",      country: "Italia" },
+  { city: "Tokio",      country: "Japón" },
+  { city: "El Cairo",   country: "Egipto" },
+  { city: "Atenas",     country: "Grecia" },
+  { city: "Sevilla",    country: "España" },
+  { city: "Lisboa",     country: "Portugal" },
+  { city: "Bruselas",   country: "Bélgica" },
+];
+
 export default function Hero() {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const containerRef = useRef(null);
+
   return (
     <section className="relative w-full">
       {/* Hero background */}
@@ -10,32 +38,65 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 w-full max-w-xl mx-auto">
           <p className="uppercase tracking-[3px] text-sm mb-3 font-medium">Llena tu viaje</p>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-8 max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-8">
             Visitas guiadas, entradas y<br />
             experiencias en todo el mundo
           </h1>
 
-          {/* Search bar */}
-          <div className="flex items-center bg-white rounded-full shadow-lg max-w-xl mx-auto overflow-hidden">
-            <div className="flex items-center flex-1 px-5 py-3">
-              <svg className="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="8" />
-                <path d="M21 21l-4.35-4.35" />
-              </svg>
-              <input
-                type="text"
-                placeholder="¿A dónde vas a viajar?"
-                className="w-full text-gray-600 text-sm outline-none bg-transparent"
-              />
+          {/* Search bar + dropdown container */}
+          <div
+            ref={containerRef}
+            className="relative"
+            onMouseLeave={() => setShowDropdown(false)}
+          >
+            {/* Search bar */}
+            <div className={`flex items-center bg-white shadow-lg max-w-xl mx-auto overflow-hidden transition-all duration-200 ${showDropdown ? 'rounded-t-2xl rounded-b-none' : 'rounded-full'}`}>
+              <div className="flex items-center flex-1 px-5 py-3">
+                <svg className="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input
+                  type="text"
+                  placeholder="¿A dónde vas a viajar?"
+                  className="w-full text-gray-600 text-sm outline-none bg-transparent"
+                  onFocus={() => setShowDropdown(true)}
+                />
+              </div>
+              <button className="bg-civitatis-pink text-white px-6 py-3 text-sm font-semibold flex items-center gap-2 hover:bg-civitatis-pink-dark transition-colors rounded-full m-1">
+                Buscar
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
-            <button className="bg-civitatis-pink text-white px-6 py-3 text-sm font-semibold flex items-center gap-2 hover:bg-civitatis-pink-dark transition-colors rounded-full m-1">
-              Buscar
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
+
+            {/* Dropdown */}
+            {showDropdown && (
+              <div className="absolute top-full left-0 right-0 bg-white rounded-b-2xl shadow-2xl z-50 pb-6 pt-4 px-6">
+                <h3 className="text-civitatis-pink font-bold text-base text-center mb-4">
+                  Top destinos
+                </h3>
+                <div className="grid grid-cols-5 gap-x-4 gap-y-3">
+                  {topDestinations.map((dest) => (
+                    <button
+                      key={dest.city}
+                      className="text-left hover:opacity-70 transition-opacity"
+                    >
+                      <p className="text-sm font-bold text-gray-800 leading-tight">{dest.city}</p>
+                      <p className="text-xs text-gray-400">{dest.country}</p>
+                    </button>
+                  ))}
+                </div>
+                <div className="text-center mt-5">
+                  <button className="border border-civitatis-pink text-civitatis-pink rounded-full px-8 py-2 text-sm font-medium hover:bg-civitatis-pink hover:text-white transition-colors">
+                    Ver todos los destinos
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

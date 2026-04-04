@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import AuthModal from './AuthModal';
 
 export default function Header() {
   const [appBannerOpen, setAppBannerOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
 
   return (
+    <>
     <header className="w-full">
       {/* Main navbar */}
       <div className="bg-civitatis-pink">
@@ -46,12 +49,18 @@ export default function Header() {
             </button>
 
             {/* Log in */}
-            <button className="text-white text-sm border border-white rounded-full px-4 py-1 hover:bg-white hover:text-civitatis-pink transition-colors">
+            <button
+              onClick={() => setAuthOpen(true)}
+              className="text-white text-sm border border-white rounded-full px-4 py-1 hover:bg-white hover:text-civitatis-pink transition-colors"
+            >
               Iniciar sesión
             </button>
 
             {/* Sign up */}
-            <button className="text-white text-sm border border-white rounded-full px-4 py-1 hover:bg-white hover:text-civitatis-pink transition-colors">
+            <button
+              onClick={() => setAuthOpen(true)}
+              className="text-white text-sm border border-white rounded-full px-4 py-1 hover:bg-white hover:text-civitatis-pink transition-colors"
+            >
               Registrarse
             </button>
           </div>
@@ -177,5 +186,8 @@ export default function Header() {
         </div>
       </div>
     </header>
+
+    {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
+  </>
   );
 }
